@@ -13,5 +13,5 @@ routes.get('/', (req, res)=> {
 routes.post('/sessions', SessionController.store);
 routes.get('/alunos', authMiddleware, StudentsController.index);
 routes.post('/alunos', authMiddleware, StudentsController.store);
-routes.put('/alunos', authMiddleware, StudentsController.update);
+routes.put('/alunos/:id', authMiddleware, StudentsController.update);
 export default routes;

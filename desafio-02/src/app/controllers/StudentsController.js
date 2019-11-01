@@ -25,8 +25,6 @@ class StudentsController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: "Validation fails" });
     }
-      
-    console.log(req.body);
     
     // Verifica se email ja esta cadastrado
     const studentExists = await Students.findOne({ where : { email: req.body.email } });
@@ -63,12 +61,13 @@ class StudentsController {
       return res.status(400).json({ error: "Validation fails" });
     }
 
-    const { email } = req.body;
+   
 
-    const aluno = await Students.findByPk(req.userId);
+    const aluno = await Students.findByPk(req.params.id);
+    
 
     // Verifica se email é diferente, no caso estara a alterar o email
-    if (email != aluno.email) {
+    if (req.body.email != aluno.email) {
       // verifica se novo email ja esta cadastrado
       const alunoExists = await Students.findOne({ where: { email } });
       if (alunoExists) {
@@ -78,7 +77,7 @@ class StudentsController {
       }
     }
 
-    const { id, name, email, peso, altura } = await aluno.update(req.body);
+    const { id, name, email, peso, altura, idade } = await aluno.update(req.body);
 
     return res.json({
       id,
