@@ -38,7 +38,6 @@ class AppointmentController {
       return res.status(400).json({ error: "Past dates are not permitted" });
     }
 
-
     const checkAvailability = await Appintment.findOne({
       where: {
         provider_id,
@@ -47,14 +46,16 @@ class AppointmentController {
       }
     });
 
-    if(checkAvailability){
-      return res.status(400).json({ error: "Appointment date is not available" });
+    if (checkAvailability) {
+      return res
+        .status(400)
+        .json({ error: "Appointment date is not available" });
     }
 
     const appointment = await Appintment.create({
       user_id: req.userId,
       provider_id,
-      date
+      date: hourStart
     });
 
     return res.json(appointment);
