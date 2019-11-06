@@ -1,9 +1,34 @@
-import Appintment from "../models/Appointment";
+import Appointment from "../models/Appointment";
 import User from "../models/User";
+import File from "../models/File";
 import * as Yup from "yup";
 import { startOfHour, parseISO, isBefore } from "date-fns";
 
 class AppointmentController {
+  async index(req, res) {
+    const appointments = await Appointment.findAll({
+      where: { user_id: req.userId, canceled_at: null },
+      order: ["date"],
+      attributes: ['id', 'date'],
+      include: [
+        {
+          model: User,
+          as: "provider",
+          attributes: ['id', 'name'],
+          include: [
+            {
+              model: File,
+              as: 'avatar',
+              attributes: ['id', 'path', 'url']
+            }
+          ]
+        }
+      ]
+    });
+
+    return res.json(appointments);
+  }
+
   async store(req, res) {
     const schema = Yup.object().shape({
       provider_id: Yup.number().required(),
@@ -38,7 +63,7 @@ class AppointmentController {
       return res.status(400).json({ error: "Past dates are not permitted" });
     }
 
-    const checkAvailability = await Appintment.findOne({
+    const checkAvailability = await Appointment.findOne({
       where: {
         provider_id,
         canceled_at: null,
@@ -52,7 +77,7 @@ class AppointmentController {
         .json({ error: "Appointment date is not available" });
     }
 
-    const appointment = await Appintment.create({
+    const appointment = await Appointment.create({
       user_id: req.userId,
       provider_id,
       date: hourStart
