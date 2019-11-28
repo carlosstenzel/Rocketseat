@@ -1,5 +1,3 @@
-const bcrypt = require("bcryptjs");
-
 module.exports = {
   up: (queryInterface, Sequelize) => {
     /*
@@ -12,13 +10,28 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
+
     return queryInterface.bulkInsert(
-      "users",
+      "planos",
       [
         {
-          name: "Administrador",
-          email: "admin@gympoint.com",
-          password_hash: bcrypt.hashSync("123456", 8),
+          title: "Start",
+          duration: 1,
+          price: "129.00",
+          created_at: new Date(),
+          updated_at: new Date()
+        },
+        {
+          title: "Gold",
+          duration: 3,
+          price: "109.00",
+          created_at: new Date(),
+          updated_at: new Date()
+        },
+        {
+          title: "Diamond",
+          duration: 6,
+          price: "89.00",
           created_at: new Date(),
           updated_at: new Date()
         }
@@ -35,6 +48,5 @@ module.exports = {
       Example:
       return queryInterface.bulkDelete('People', null, {});
     */
-    return queryInterface.bulkDelete('users', null, {});
   }
 };
