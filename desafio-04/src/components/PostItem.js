@@ -1,17 +1,15 @@
-import React from "react";
+import React from 'react';
 
-function PostItem(post) {
+import PostComments from './PostComments';
+import PostHeader from './PostHeader';
+
+
+function PostItem({ author, date, content, comments }) {
   return (
     <div className="post">
-
-      <div className="post-header">
-        <img className="avatar" src={post.author.avatar} />
-        <div className="details">
-          <span>{post.author.name}</span>
-          <span>{post.date}</span>
-        </div>
-      </div>
-  <p className="post-content">{post.content}</p>
+      <PostHeader author={author} date={date} />
+      <p className="post-content">{content}</p>
+      <PostComments comments={comments} />
     </div>
   );
 }
