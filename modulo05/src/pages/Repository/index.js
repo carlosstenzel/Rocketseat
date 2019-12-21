@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import api from '../../services/api';
 
 // import { Container } from './styles';
@@ -6,6 +7,7 @@ import api from '../../services/api';
 export default class Repository extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       repository: {},
       issues: [],
@@ -27,15 +29,22 @@ export default class Repository extends React.Component {
     ]);
 
     this.setState({
-      repostitory: repository.data,
+      repository: repository.data,
       issues: issues.data,
       loading: false,
     });
   }
 
   render() {
-
-
+    const { repository, issues, loading } = this.state;
     return <h1>Repository: </h1>;
   }
 }
+
+Repository.propTypes = {
+  match: PropTypes.shape({
+    params: PropTypes.shape({
+      repository: PropTypes.string,
+    }),
+  }).isRequired,
+};
