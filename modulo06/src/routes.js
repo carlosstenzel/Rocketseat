@@ -6,8 +6,12 @@ import User from './pages/User';
 
 const Routes = createAppContainer(
   createStackNavigator({
-    Main,
-    User,
+    Main: {
+      screen: Main,
+    },
+    User: {
+      screen: User,
+    },
   }),
 );
 
