@@ -12,3 +12,7 @@ export default function Main() {
     </>
   );
 }
+
+Main.navigationOptions = {
+  title: 'Usuários',
+};

@@ -5,14 +5,26 @@ import Main from './pages/Main';
 import User from './pages/User';
 
 const Routes = createAppContainer(
-  createStackNavigator({
-    Main: {
-      screen: Main,
+  createStackNavigator(
+    {
+      Main: {
+        screen: Main,
+      },
+      User: {
+        screen: User,
+      },
     },
-    User: {
-      screen: User,
+    {
+      defaultNavigationOptions: {
+        headerTitleAlign: 'center',
+        headerStyle: {
+          backgroundColor: '#7159c1',
+        },
+        headerTintColor: '#FFF',
+        headerBackTitleVisible: false,
+      },
     },
-  }),
+  ),
 );
 
 export default Routes;
