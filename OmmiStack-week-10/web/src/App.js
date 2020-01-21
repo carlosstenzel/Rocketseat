@@ -34,7 +34,54 @@ function App() {
           <button type="submit">Salvar</button>
         </form>
       </aside>
-      <main></main>
+      <main>
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/3890516?s=460&v=4" alt="Carlos Stenzel" />
+              <div className="user-info">
+                <strong>Carlos Stenzel</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Programador full-stack, apaixonado por Javascript, ReactJS, React Native, NodeJS e todo ecossistema em torno dessas </p>
+            <a href="https://github.com/carlosstenzel">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/3890516?s=460&v=4" alt="Carlos Stenzel" />
+              <div className="user-info">
+                <strong>Carlos Stenzel</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Programador full-stack, apaixonado por Javascript, ReactJS, React Native, NodeJS e todo ecossistema em torno dessas </p>
+            <a href="https://github.com/carlosstenzel">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/3890516?s=460&v=4" alt="Carlos Stenzel" />
+              <div className="user-info">
+                <strong>Carlos Stenzel</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Programador full-stack, apaixonado por Javascript, ReactJS, React Native, NodeJS e todo ecossistema em torno dessas </p>
+            <a href="https://github.com/carlosstenzel">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars3.githubusercontent.com/u/3890516?s=460&v=4" alt="Carlos Stenzel" />
+              <div className="user-info">
+                <strong>Carlos Stenzel</strong>
+                <span>ReactJS, React Native, Node.js</span>
+              </div>
+            </header>
+            <p>Programador full-stack, apaixonado por Javascript, ReactJS, React Native, NodeJS e todo ecossistema em torno dessas </p>
+            <a href="https://github.com/carlosstenzel">Acessar perfil no Github</a>
+          </li>
+        </ul>
+      </main>
     </div>
   );
 }
