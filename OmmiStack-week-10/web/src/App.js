@@ -1,8 +1,17 @@
 import React from 'react';
 
+import './global.css';
+
 function App() {
   return (
-    <hh1>Hello Word</hh1>
+    <div id="app">
+      <aside>
+
+      </aside>
+      <main>
+
+      </main>
+    </div>
   );
 }
 
