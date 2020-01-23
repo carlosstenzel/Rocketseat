@@ -3,7 +3,7 @@ import {Keyboard} from 'react-native';
 import api from '../../services/api';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Container, Form, Input, SubmitButton, List} from './styles';
+import {Container, Form, Input, SubmitButton, List, User, Avatar} from './styles';
 
 export default class Main extends React.Component {
   state = {
