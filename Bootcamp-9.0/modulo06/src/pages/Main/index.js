@@ -3,7 +3,19 @@ import {Keyboard} from 'react-native';
 import api from '../../services/api';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
-import {Container, Form, Input, SubmitButton, List, User, Avatar} from './styles';
+import {
+  Container,
+  Form,
+  Input,
+  SubmitButton,
+  List,
+  User,
+  Avatar,
+  Name,
+  Bio,
+  ProfileButton,
+  ProfileButtonText,
+} from './styles';
 
 export default class Main extends React.Component {
   state = {
@@ -52,13 +64,18 @@ export default class Main extends React.Component {
           <List
             data={users}
             keyExtractor={user => user.login}
-            renderItem={({item})=> (
+            renderItem={({item}) => (
               <User>
-                <Avatar />
+                <Avatar source={{uri: item.avatar}} />
+                <Name>{item.name}</Name>
+                <Bio>{item.bio}</Bio>
+
+                <ProfileButton onPress={() => {}}>
+                  <ProfileButtonText>Ver pergfil</ProfileButtonText>
+                </ProfileButton>
               </User>
             )}
           />
-
         </Container>
       </>
     );
