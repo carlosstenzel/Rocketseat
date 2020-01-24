@@ -55,7 +55,7 @@ export const Name = styled.Text`
   font-size: 14px;
   color: #333;
   font-weight: bold;
-  margin-top: 4px;;
+  margin-top: 4px;
   text-align: center;
 `;
 
@@ -77,6 +77,7 @@ export const ProfileButton = styled(RectButton)`
   justify-content: center;
   align-items: center;
   height: 36px;
+  opacity: ${props => (props.loading ? 0.7 : 1)};
 `;
 
 export const ProfileButtonText = styled.Text`
