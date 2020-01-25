@@ -28,7 +28,7 @@ export default class Main extends React.Component {
 
   async componentDidMount() {
     const users = await AsyncStorage.getItem('users');
-    console.log(users);
+
     if (users) {
       this.setState({users: JSON.parse(users)});
     }
@@ -97,7 +97,7 @@ export default class Main extends React.Component {
                 <Bio>{item.bio}</Bio>
 
                 <ProfileButton onPress={() => {}}>
-                  <ProfileButtonText>Ver pergfil</ProfileButtonText>
+                  <ProfileButtonText>Ver perfil</ProfileButtonText>
                 </ProfileButton>
               </User>
             )}
