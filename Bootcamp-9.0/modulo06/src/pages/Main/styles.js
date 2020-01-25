@@ -46,7 +46,7 @@ export const User = styled.View`
 
 export const Avatar = styled.Image`
   width: 64px;
-  width: 64px;
+  height: 64px;
   border-radius: 32px;
   background: #eee;
 `;
