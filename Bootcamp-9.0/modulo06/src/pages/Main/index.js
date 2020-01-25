@@ -25,11 +25,11 @@ export default class Main extends React.Component {
     title: 'Usuários',
   };
 
-  static PropTypes = {
+  static propTypes = {
     navigation: PropTypes.shape({
       navigate: PropTypes.func,
     }).isRequired,
-  }
+  };
 
   state = {
     newUser: '',
@@ -124,4 +124,3 @@ export default class Main extends React.Component {
     );
   }
 }
-
