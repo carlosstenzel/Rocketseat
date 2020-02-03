@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 function App() {
   const [tech, setTech] = useState(['ReactJS', 'React Native']);
@@ -9,6 +9,23 @@ function App() {
     setNewTech('');
   }
 
+  useEffect(() => {
+    const storagetech = localStorage.getItem('tech');
+
+    if (storagetech) {
+      setTech(JSON.parse(storagetech));
+    }
+    /*
+    return () => {
+      document.removeEventListener();
+    };
+    */
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tech', JSON.stringify(tech));
+  }, [tech]);
+
   return (
     <>
       <ul>
@@ -16,7 +33,11 @@ function App() {
           <li key={t}>{t}</li>
         ))}
       </ul>
-      <input type='text' value={newTech} onChange={e => setNewTech(e.target.value)} />
+      <input
+        type="text"
+        value={newTech}
+        onChange={e => setNewTech(e.target.value)}
+      />
       <button type="button" onClick={handleAdd}>
         Adicionar
       </button>
