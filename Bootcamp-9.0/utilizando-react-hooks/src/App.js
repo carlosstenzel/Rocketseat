@@ -1,9 +1,23 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 
 function App() {
+  const [tech, setTech] = useState(['ReactJS', 'React Native']);
+
+  function handleAdd() {
+    setTech([...tech, 'Node.js']);
+  }
+
   return (
-   <h1>Hello</h1>
+    <>
+      <ul>
+        {tech.map(t => (
+          <li key={t}>{t}</li>
+        ))}
+      </ul>
+      <button type="button" onClick={handleAdd}>
+        Adicionar
+      </button>
+    </>
   );
 }
 
