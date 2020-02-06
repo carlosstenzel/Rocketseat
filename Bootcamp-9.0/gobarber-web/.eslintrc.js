@@ -35,9 +35,8 @@ module.exports = {
   },
   settings: {
     'import/resolver': {
-      node: {
-        paths: ['src'],
-        extensions: ['.js', '.ts', '.d.ts'],
+      'babel-plugin-root-import': {
+        rootPathSuffix: 'src',
       },
     },
   },
