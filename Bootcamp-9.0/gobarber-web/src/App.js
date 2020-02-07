@@ -1,5 +1,5 @@
 import React from 'react';
-import { Provider } from 'reactotron-redux';
+import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 
 import './config/ReactotronConfig';
