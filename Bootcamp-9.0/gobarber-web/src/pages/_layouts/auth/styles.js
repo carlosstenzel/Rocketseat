@@ -45,7 +45,7 @@ export const Content = styled.div`
       height: 44px;
       background: #3b9eff;
       font-weight: bold;
-      color: #000;
+      color: #FFF;
       border: 0;
       border-radius: 4px;
       font-size: 16px;
