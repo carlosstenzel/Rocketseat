@@ -20,7 +20,7 @@ export default function auth(state = INITIAL_STATE, action) {
         break;
       }
       case '@auth/SIGN_FAILURE': {
-        draft.loading = true;
+        draft.loading = false;
         break;
       }
       default:
