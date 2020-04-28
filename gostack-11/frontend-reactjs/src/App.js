@@ -5,7 +5,11 @@ import Header from './components/header';
 function App() {
   return (
     <>
-      <Header />
+      <Header title="Home" >
+
+          <p>filho</p>
+
+      </Header>
     </>
   )
 }
