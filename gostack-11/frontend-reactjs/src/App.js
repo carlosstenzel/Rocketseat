@@ -1,13 +1,19 @@
 import React from 'react';
+import api from './services/api';
 
 import './App.css';
-import backgroundImage from "./assets/background.jpeg";
 
 import Header from './components/header';
 
 function App() {
 
-  const [projects, setProjects] = React.useState(["projeto 1"]);
+  const [projects, setProjects] = React.useState([]);
+
+  React.useEffect(() => {
+    api.get('/projects').then(response => {
+      setProjects(response.data);
+    }) 
+  }, []);
 
   function handleAddProject(){ß
     setProjects( [
@@ -20,10 +26,9 @@ function App() {
     <>
       <Header title="Home" />
       
-      <img width={300} src={backgroundImage} />
       <ul>
         {projects.map(project => (
-          <li key={project}>{project}</li>
+          <li key={project.id}>{project.title}</li>
         ))}
       </ul>
 
