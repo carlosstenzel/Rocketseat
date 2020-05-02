@@ -10,16 +10,22 @@ function App() {
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    api.get('/projects').then(response => {
+    api.get('projects').then(response => {
       setProjects(response.data);
     }) 
   }, []);
 
-  function handleAddProject(){ß
-    setProjects( [
-        ...projects, 
-        `Novo projeto ${Date.now()}`
-      ]);
+  async function handleAddProject(){
+    const response = await api.post("projects", {
+      title: "d",
+      owner: "d"
+    });
+
+    const project = response.data;
+
+    setProjects([...projects, project]);
+
+
   }
 
   return (
