@@ -6,7 +6,6 @@ import { FormHandles } from '@unform/core';
 import { Container, Content, Background } from './styles';
 import logoImg from '../../assets/logo.svg';
 import getValidationErros from '../../utils/getValidationErros';
-
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
