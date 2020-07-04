@@ -16,6 +16,7 @@ import * as Yup from 'yup';
 import getValidationErros from '../../utils/getValidationErros';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import api from '../../services/api';
 
 import {
   Container,
@@ -51,7 +52,14 @@ const SignUp: React.FC = () => {
 
       await schema.validate(data, { abortEarly: false });
 
-      // await api.post('/users', data);
+      await api.post('/users', data);
+
+      Alert.alert(
+        'Cadastro realizado com sucesso!',
+        'Você já pode fazer login na aplicação.',
+      );
+
+      navigation.goBack();
     } catch (err) {
       if (err instanceof Yup.ValidationError) {
         const errors = getValidationErros(err);
