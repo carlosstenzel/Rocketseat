@@ -1,3 +1,21 @@
-test('sum two numbers', () => {
-  expect(1 + 2).toBe(3);
+import FakeAppointmentsRepository from '../repositories/fakes/FakeAppointmentsRepository';
+import CreateAppointmentServices from './CreateAppointmentServices';
+
+describe('CreateAppointment', () => {
+  it('should be able to create a new appointment', async () => {
+    const fakeAppointmentsRepository = new FakeAppointmentsRepository();
+    const createAppointment = new CreateAppointmentServices(
+      fakeAppointmentsRepository,
+    );
+
+    const appointment = await createAppointment.execute({
+      date: new Date(),
+      provider_id: '123123',
+    });
+
+    expect(appointment).toHaveProperty('id');
+    expect(appointment.provider_id).toBe('123123');
+  });
+
+  // it('should not be able to create two appointment on the same time', () => {});
 });
