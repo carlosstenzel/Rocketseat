@@ -1,4 +1,3 @@
-import { isThisMonth } from 'date-fns';
 import IStorageProvider from '../models/IStorageProvider';
 
 class FakeStorageProvider implements IStorageProvider {
