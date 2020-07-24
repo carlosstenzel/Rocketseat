@@ -3,3 +3,4 @@ temp/*
 .vscode/
 node_modules/
 build/
+coverage/
